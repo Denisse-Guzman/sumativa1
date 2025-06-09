@@ -7,7 +7,7 @@
 
 :root {
     --primary-color: #7b241c;
-    --secondary-color: #c0392b;
+    --secondary-color: #ad7c77;
     --accent-color: #cb4335;
     --dark-bg: #641e16;
     --light-bg: #fcf8f9;
@@ -301,7 +301,7 @@ section {
 }
 /* seccion nosotros */
 .about {
-    background: var(--gradient-hero);
+    background: var(--secondary-color);
 }
 
 .about-content {
@@ -437,4 +437,12 @@ footer {
         --text-primary: #f1f5f9;
         --text-light: #94a3b8;
     }
+}
+.floating-image {
+    width: 100%;
+    max-width: 300px;     /* Limita el tamaño máximo */
+    height: auto;         /* Mantiene proporciones */
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
 }
