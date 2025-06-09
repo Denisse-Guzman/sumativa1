@@ -209,9 +209,8 @@ nav {
     animation: float 6s ease-in-out infinite;
     border: 1px solid rgba(99, 102, 241, 0.1);
 }
-.floating-image {
-    width: 300px;
-    max-width: 100%;
-    border-radius: 15px;
-    display: block;
+.floating-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
