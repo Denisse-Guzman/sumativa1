@@ -11,8 +11,11 @@
     <!--header con navegacion-->
     <header>
         <nav>
-            <div class="logo">VINO Y SE FUE</div>
-            <ul class="nav-links">											
+            <div class="logo">
+                <a href="#Inicio" style="text-decoration: none;">VINO Y SE FUE</a>
+            </div>
+            <button class="nav-toggle" aria-label="Abrir menú">&#9776;</button>
+            <ul class="nav-links"> 									
                 <li><a href="#Inicio">Inicio</a></li>
                 <li><a href="#Vinos">Vinos</a></li>
                 <li><a href="#Nosotros">Nosotros</a></li>
@@ -23,11 +26,11 @@
     <!-- Estructura del main-->
     <main>
         <!-- seccion izquierda -->
-        <section id="inicio" class="hero">
+        <section id="Inicio" class="hero">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Para que me invitan si saben como me pongo ?</h1>
-                    <p>Transformamos momentos simples en epicos. Desarrollando lo mejor de tu personalidad, diseñando momentos inolvidables y tomando el control de tus fiestas. </p>
+                    <p>Transformamos momentos simples en épicos. Desarrollando lo mejor de tu personalidad, diseñando momentos inolvidables y tomando el control de tus fiestas. </p>
                     <a href="#Vinos" class="cta-button">Descubre Nuestros Vinos </a>
                 </div>
                 <!-- seccion derecha -->
@@ -187,7 +190,26 @@
                 header.style.boxShadow = 'none';
             }
         });
-    </script>                
+      
+         const toggleButton = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            if (navLinks.classList.contains('open')) {
+              navLinks.classList.remove('open');
+              navLinks.classList.add('closing');
+
+      
+              setTimeout(() => {
+                navLinks.classList.remove('closing');
+                navLinks.style.display = 'none';
+            }, 300);
+           } else {
+            navLinks.style.display = 'flex';
+            navLinks.classList.add('open');
+        }
+    });
+    </script>     
 
 </body>
 </html>

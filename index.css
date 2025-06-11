@@ -81,6 +81,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    min-width: 300px; 
 }
 .logo {
     font-size: 1.5rem;
@@ -91,6 +93,8 @@ nav {
     -webkit-text-fill-color: transparent;
     animation: shimmer 2s infinite linear;
     background-size: 200% 100%;
+    flex-shrink: 0; 
+    white-space: nowrap; 
 }
 .nav-links {
     display: flex;
@@ -411,11 +415,6 @@ footer {
     .hero-text h1 {
         font-size: 2.5rem;
     }
-
-    .nav-links {
-        display: none;
-    }
-
     .about-content {
         grid-template-columns: 1fr;
     }
@@ -445,4 +444,116 @@ footer {
     border-radius: 15px;
     display: block;
     margin: 0 auto;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1.2rem;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--dark-text);
+    z-index: 1100;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .nav-toggle:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 220px;
+    background: #f8f9fa; /* claro, coherente con tu tema */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    display: none;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 999;
+    font-family: 'Georgia', serif;  /* igual que el resto del sitio */
+    font-size: 1.1rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    color: var(--dark-text);
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary-color); /* si tienes una variable, si no usa #a82e2e o similar */
+  }
+}
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+}
+
+.nav-links.open {
+  display: flex;
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.nav-links.closing {
+  animation: slideUp 0.3s ease-in forwards;
 }
