@@ -431,11 +431,60 @@ footer {
 
 /* Modo oscuro */
 @media (prefers-color-scheme: dark) {
-    :root {
-        --light-bg: #0f172a;
-        --text-primary: #f1f5f9;
-        --text-light: #94a3b8;
-    }
+  :root {
+    --light-bg: #0f172a;
+    --text-primary: #f1f5f9;
+    --text-light: #94a3b8;
+    --primary-color: #f87171;
+    --secondary-color: #1f2937;
+    --accent-color: #fb923c;
+    --gradient-primary: linear-gradient(135deg, #f87171,#fbbf24, #facc15);
+    --gradient-hero: linear-gradient(135deg, #1e293b, #111827);
+    --shadow-soft: 0 10px 25px -5px rgba(255, 255, 255, 0.1), 0 10px 10px -5px rgba(255, 255, 255, 0.04);
+    --shadow-glow: 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+
+  body,
+  .features,
+  .feature-card,
+  .floating-card,
+  .stat-item,
+  .nav-links,
+  .about {
+    background: #0f172a !important;
+    color: var(--text-primary) !important;
+  }
+
+  header {
+    background: rgba(31, 41, 55, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a {
+    color: var(--text-primary);
+  }
+
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+  footer {
+    background: #111827;
+    color: var(--text-light);
+  }
+
+  .footer-bottom {
+    color: #9ca3af;
+    border-color: #374151;
+  }
+
+  .footer-section a {
+    color: var(--text-light);
+  }
+
+  .footer-section a:hover {
+    color: var(--accent-color);
+  }
 }
 .floating-image {
     width: 100%;
