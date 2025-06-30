@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#641e16">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>VINO Y SE FUE - Los Mejores Vinos</title>
     <link rel="stylesheet" href="index.css">
 </head>
@@ -184,13 +185,11 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(248, 250, 252, 0.98)';
                 header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
             } else {
-                header.style.background = 'rgba(248, 250, 252, 0.95)';
                 header.style.boxShadow = 'none';
             }
-        });
+        }); 
       
          const toggleButton = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
